@@ -1,0 +1,38 @@
+{
+  "name": "templater",
+  "version": "0.1.0",
+  "description": "CLI for creating files by templates",
+  "type": "module",
+  "main": "dist/templater.js",
+  "module": "dist/templater.js",
+  "bin": {
+    "templater": "dist/templater.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "node dist/templater.js"
+  },
+  "author": "ch4m4",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-eslint": "^9.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.36.0",
+    "eslint-plugin-import": "^2.27.5",
+    "rollup": "^3.19.1",
+    "typescript": "^4.9.5"
+  }
+}
