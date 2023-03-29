@@ -1,9 +1,9 @@
-# Templater
+# Templater CLI
 Templater is a simple command line tool for managing and generating files from templates.
 
 ## Installation
 ```bash
-npm install -g templater
+npm install templater-cli
 ```
 
 ## Usage
