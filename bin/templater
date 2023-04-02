@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-
-const templaterCLI = require('templater-cli');
-templaterCLI();

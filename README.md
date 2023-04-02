@@ -3,7 +3,7 @@ Templater is a simple command line tool for managing and generating files from t
 
 ## Installation
 ```bash
-npm install templater-cli
+npm install templater-cli --save-dev
 ```
 
 ## Usage
