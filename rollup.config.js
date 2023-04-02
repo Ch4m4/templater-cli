@@ -3,9 +3,7 @@ import pluginNodeResolve from '@rollup/plugin-node-resolve';
 import pluginTypescript from '@rollup/plugin-typescript';
 import pkg from './package.json' assert { type: 'json' };
 
-
 const { name, author, version, license, module } = pkg;
-
 const banner = `/**
  * @license
  * author: ${author}

@@ -1,12 +1,12 @@
 {
-  "name": "templater",
-  "version": "0.1.0",
+  "name": "templater-cli",
+  "version": "1.0.1",
   "description": "CLI for creating files by templates",
   "type": "module",
-  "main": "dist/templater.js",
-  "module": "dist/templater.js",
+  "main": "dist/templater-cli.js",
+  "module": "dist/templater-cli.js",
   "bin": {
-    "templater": "dist/templater.js"
+    "templater": "bin/templater"
   },
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "node dist/templater.js"
+    "start": "node dist/templater-cli.js"
   },
   "author": "ch4m4",
   "license": "ISC",
