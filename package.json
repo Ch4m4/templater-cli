@@ -22,13 +22,20 @@
     "generate",
     "generator"
   ],
+  "author": {
+    "name": "ch4m4",
+    "email": "chamav98@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ch4m4/templater-cli"
+  },
+  "license": "ISC",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "node dist/templater-cli.js"
   },
-  "author": "ch4m4",
-  "license": "ISC",
   "dependencies": {
     "commander": "^10.0.0",
     "inquirer": "^9.1.4"
