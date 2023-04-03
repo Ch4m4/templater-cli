@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const { templaterCLI } = require('../src/index.js');
+import { templaterCLI } from 'templater-cli';
 templaterCLI();
