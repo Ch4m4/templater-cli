@@ -1,6 +1,6 @@
 {
   "name": "templater-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI for creating files by templates",
   "type": "module",
   "main": "dist/templater-cli.js",
@@ -10,6 +10,17 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "cli",
+    "templater",
+    "template",
+    "templates",
+    "file",
+    "files",
+    "create",
+    "generate",
+    "generator"
   ],
   "scripts": {
     "build": "rollup -c",
