@@ -6,6 +6,6 @@ export async function listAction(configPath: string): Promise<void> {
 
   info('Available templates:');
   templates.map(({ name, description }) => {
-    info(`${name} - ${description}`);
+    info(description?.trim() ? `${name} - ${description}` : name);
   });
 }
