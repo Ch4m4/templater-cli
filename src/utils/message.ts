@@ -16,3 +16,7 @@ export function success(str: string) {
 export function warning(str: string) {
   message(str, Color.Yellow);
 }
+
+export function info(str: string) {
+  message(str, Color.Blue);
+}
