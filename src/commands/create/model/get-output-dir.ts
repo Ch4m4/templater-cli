@@ -9,21 +9,23 @@ interface getOutputDirProps {
   template: Template;
   options: Options;
   replaceValues: Record<string, string>;
-  filesCase?: Case;
+  filesCase: Case;
 }
 
+const getDefaultDir = (replaceValues: Record<string, string>, filesCase: Case): string => {
+  const keys = Object.keys(replaceValues);
+  const defaultDir = keys.includes('__name__') ? replaceValues.__name__ : keys[0];
+
+  return convertByCase(defaultDir, filesCase) || '';
+};
+
 export async function getOutputDir(props: getOutputDirProps): Promise<string> {
-  const { template, options, replaceValues, filesCase = 'kebab' } = props;
-
-  console.log(replaceValues);
-  const defaultDir = Object.entries(replaceValues)
-    .reduce((acc, [ key, value ]) => key === '__name__' ? value : value, '');
-
+  const { template, options, replaceValues, filesCase } = props;
   const { filesDir } = await inquirer.prompt({
     type: 'input',
     name: 'filesDir',
     message: 'Enter the name of the directory where the files will be created',
-    default: convertByCase(defaultDir, filesCase),
+    default: getDefaultDir(replaceValues, filesCase),
   });
 
   let outputDir = options.output || template.outputPath;

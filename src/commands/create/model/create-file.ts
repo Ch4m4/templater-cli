@@ -7,7 +7,7 @@ import { convertByCase } from '@/utils/convert-by-case';
 import { success, warning } from '@/utils/message';
 
 export async function createFile(props: createFilesProps, fileName: string): Promise<void> {
-  const { templateDir, outputDir, replaceRules, replaceValues } = props;
+  const { templateDir, outputDir, replaceRules, replaceValues, filesCase } = props;
   const filePath = path.join(templateDir, fileName);
   let newFileContent = fs.readFileSync(filePath, 'utf-8');
   let newFileName = fileName;
@@ -15,10 +15,11 @@ export async function createFile(props: createFilesProps, fileName: string): Pro
   if (replaceRules && replaceValues) {
     for (const rule of replaceRules) {
       const regex = new RegExp(rule.keyword, 'g');
-      const replacement = convertByCase(replaceValues[rule.keyword], rule.case as Case);
+      const fileNameReplacement = convertByCase(replaceValues[rule.keyword], filesCase as Case);
+      const contentReplacement = convertByCase(replaceValues[rule.keyword], rule.case as Case);
 
-      newFileName = newFileName.replace(regex, replacement);
-      newFileContent = newFileContent.replace(regex, replacement);
+      newFileName = newFileName.replace(regex, fileNameReplacement);
+      newFileContent = newFileContent.replace(regex, contentReplacement);
     }
   }
 

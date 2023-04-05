@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { createFile } from './create-file';
-import { ReplaceRules } from '@/types';
+import { Case, ReplaceRules } from '@/types';
 import { error } from '@/utils/message';
 
 export interface createFilesProps {
@@ -8,6 +8,7 @@ export interface createFilesProps {
   outputDir: string;
   replaceRules?: ReplaceRules[];
   replaceValues?: Record<string, string>;
+  filesCase?: Case;
 }
 
 

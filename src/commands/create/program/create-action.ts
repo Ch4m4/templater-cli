@@ -8,7 +8,7 @@ import { error } from '@/utils/message';
 import { validate } from '@/utils/validate';
 
 export async function createAction(configPath: string, templateName: string, options: Options): Promise<void> {
-  const { templatesPath, templates, filesCase } = readConfig(configPath);
+  const { templatesPath, templates, filesCase = 'kebab' } = readConfig(configPath);
   const template = templates.find((t) => t.name === templateName);
 
   if (!template) {
@@ -38,6 +38,7 @@ export async function createAction(configPath: string, templateName: string, opt
       outputDir,
       replaceRules,
       replaceValues,
+      filesCase,
     });
   } catch (e) {
     e instanceof Error && error(`Error during file creation: ${e.message}`);

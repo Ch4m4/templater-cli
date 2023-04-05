@@ -30,15 +30,13 @@ export async function initAction(configPath: string): Promise<void> {
     success(`Created directory ${templatesPath}`);
   }
 
-  const templates = await getTemplates(templatesPath);
   const filesCase = await getFilesCase();
+  const templates = await getTemplates(templatesPath);
   const config: Config = {
     templatesPath,
     filesCase,
     templates,
   };
-
-  console.log(filesCase);
 
   writeConfig(configPath, config)
     .then(() => success(`Created config file ${configPath}`));
