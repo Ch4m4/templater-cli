@@ -15,10 +15,13 @@ export async function createFile(props: createFilesProps, fileName: string): Pro
   if (replaceRules && replaceValues) {
     for (const rule of replaceRules) {
       const regex = new RegExp(rule.keyword, 'g');
+      const importRegex = new RegExp(`(from\\s+['"][\\.\\/\\w]+)${rule.keyword}`, 'g');
+
       const fileNameReplacement = convertByCase(replaceValues[rule.keyword], filesCase as Case);
       const contentReplacement = convertByCase(replaceValues[rule.keyword], rule.case as Case);
 
       newFileName = newFileName.replace(regex, fileNameReplacement);
+      newFileContent = newFileContent.replace(importRegex, `$1${fileNameReplacement}`);
       newFileContent = newFileContent.replace(regex, contentReplacement);
     }
   }
