@@ -1,6 +1,6 @@
 {
   "name": "templater-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "CLI for creating files by templates",
   "type": "module",
   "main": "dist/templater-cli.js",
